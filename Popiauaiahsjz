@@ -1,0 +1,134 @@
+repeat wait() until game:IsLoaded() 
+
+local drop = game:GetService("ReplicatedStorage").RemoteEvents.Drop 
+
+local equip = game:GetService("ReplicatedStorage").RemoteEvents.Equip 
+
+ 
+
+function autoequip(c,item) 
+
+for i = 1,c do 
+
+wait(0.1) 
+
+equip:FireServer(item) 
+
+ 
+
+function autodrop(c,item) 
+
+for i = 1,c do 
+
+wait(.4) 
+
+drop:FireServer(item) 
+
+end 
+
+end 
+
+end 
+
+end 
+
+ 
+
+autoequip(1,"F") 
+
+autodrop(1,"F") 
+
+wait(1) 
+
+game:GetService("TeleportService"):Teleport(7346416636,game:GetService("Players").LocalPlayer) 
+
+wait(.3) 
+
+local function bsf() 
+
+local n = false 
+
+ 
+
+for i, v2 in pairs(workspace.Dropped:GetChildren()) do 
+
+if 
+
+v2.Owner.Value == game.Players.LocalPlayer or 
+
+v2.Owner.Value == game.Players.LocalPlayer.Character 
+
+ 
+
+--print("take") 
+
+then 
+
+print("take") 
+
+ 
+
+for is, vs in pairs(game.Players.LocalPlayer.Character:GetChildren()) do 
+
+if vs:IsA("MeshPart") or vs:IsA("BasePart") and v then 
+
+print("1n1", v2, vs) 
+
+ 
+
+firetouchinterest(vs, v2.Handle, 1) 
+
+ 
+
+firetouchinterest(vs, v2.Handle, 0) 
+
+ 
+
+--char.HumanoidRootPart.CFrame = v2.Handle.CFrame 
+
+ 
+
+ 
+
+n = true 
+
+ 
+
+print(2) 
+
+ 
+
+break 
+
+end 
+
+end 
+
+ 
+
+print(3) 
+
+end 
+
+end 
+
+ 
+
+if n then 
+
+wait() 
+
+ 
+
+bsf() 
+
+end 
+
+end 
+
+ 
+
+bsf() 
+
+ 
+
